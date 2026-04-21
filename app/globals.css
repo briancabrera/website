@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --bg: #0f0e0c;
+  --bg-elev: #17140f;
+  --fg: #ebe5d7;
+  --fg-dim: #9a9286;
+  --fg-mute: #6a6459;
+  --fg-sub: #3c3830;
+  --line: #1e1b16;
+  --line-bright: #272320;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-feature-settings: "ss01", "ss02", "cv11";
+}
+
+::selection {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+:focus-visible {
+  outline: 1px solid var(--fg);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
