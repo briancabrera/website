@@ -232,9 +232,22 @@ function CurrentFocus({ t }: { t: T }) {
     <section id="focus" className="py-16 sm:py-20">
       <SectionHeading>{t.sections.focus}</SectionHeading>
 
-      <div className="flex items-baseline gap-3">
+      <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
         <h3 className="text-4xl font-medium leading-none tracking-tighter2 text-fg sm:text-5xl">
-          Biolink
+          <a
+            href={contact.biolink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-baseline gap-2"
+          >
+            <span>Biolink</span>
+            <span
+              aria-hidden
+              className="text-xl text-fg-sub transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-fg-mute sm:text-2xl"
+            >
+              ↗
+            </span>
+          </a>
         </h3>
         <span className="text-sm text-fg-mute">{t.focus.inProgress}</span>
       </div>

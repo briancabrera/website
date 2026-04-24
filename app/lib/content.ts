@@ -186,5 +186,6 @@ export const contact = {
   linkedin: "https://www.linkedin.com/in/brian-cabrera/",
   github: "https://github.com/briancabrera",
   email: "brian@biolink.uy",
+  biolink: "https://biolink.uy",
   tracevault: "https://tracevault.briancabrera.com",
 };
