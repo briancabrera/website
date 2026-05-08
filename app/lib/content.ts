@@ -62,7 +62,7 @@ export const content: Record<Locale, Content> = {
       ],
     },
     focus: {
-      inProgress: "pre-launch · may 2026",
+      inProgress: "pre-launch · june 2026",
       tagline: "A biometric identity layer for physical commerce.",
       paragraphs: [
         "Biolink takes most of my time right now. It didn't start from a deck. It came out of things I kept seeing go wrong in physical environments, where identity and payments are still held together with tape.",
@@ -72,7 +72,7 @@ export const content: Record<Locale, Content> = {
         { label: "Category", value: "Biometric identity, physical commerce" },
         { label: "Role", value: "Founder" },
         { label: "Stage", value: "Pre-launch" },
-        { label: "Launch", value: "May 2026" },
+        { label: "Launch", value: "June 2026" },
       ],
     },
     principles: [
@@ -133,7 +133,7 @@ export const content: Record<Locale, Content> = {
       ],
     },
     focus: {
-      inProgress: "pre-launch · mayo 2026",
+      inProgress: "pre-launch · junio 2026",
       tagline: "Una capa de identidad biométrica para el comercio físico.",
       paragraphs: [
         "Biolink se lleva la mayor parte de mi tiempo hoy. No salió de un deck. Salió de cosas que fui viendo romperse en entornos físicos, donde identidad y pagos todavía se sostienen con cinta adhesiva.",
@@ -143,7 +143,7 @@ export const content: Record<Locale, Content> = {
         { label: "Categoría", value: "Identidad biométrica, comercio físico" },
         { label: "Rol", value: "Founder" },
         { label: "Etapa", value: "Pre-launch" },
-        { label: "Lanzamiento", value: "Mayo 2026" },
+        { label: "Lanzamiento", value: "June 2026" },
       ],
     },
     principles: [
@@ -183,7 +183,7 @@ export const content: Record<Locale, Content> = {
 };
 
 export const contact = {
-  linkedin: "https://www.linkedin.com/in/brian-cabrera/",
+  linkedin: "https://www.linkedin.com/in/cabrerabrian/",
   github: "https://github.com/briancabrera",
   email: "brian@biolink.uy",
   biolink: "https://biolink.uy",
