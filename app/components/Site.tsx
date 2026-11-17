@@ -275,6 +275,11 @@ function Projects({ t }: { t: T }) {
             <p className="mt-6 text-lg leading-relaxed text-fg-dim">
               {project.body}
             </p>
+            {project.note && (
+              <p className="mt-4 text-base leading-relaxed text-fg-mute">
+                {project.note}
+              </p>
+            )}
           </article>
         ))}
       </div>
