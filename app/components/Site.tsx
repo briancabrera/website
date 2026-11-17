@@ -41,9 +41,9 @@ export default function Site() {
       <TopBar t={t} locale={locale} onChange={setLocale} />
       <Hero t={t} />
       <About t={t} />
-      <CurrentFocus t={t} />
+      <Status t={t} />
+      <Projects t={t} />
       <HowIThink t={t} />
-      <OtherOutput t={t} />
       <Footer t={t} />
     </main>
   );
@@ -64,7 +64,7 @@ function SectionHeading({ children }: { children: ReactNode }) {
   );
 }
 
-/** A subtle inline link (used for contact + Tracevault). */
+/** A subtle inline link (used for contact links). */
 function QuietLink({
   href,
   children,
@@ -185,7 +185,7 @@ function Hero({ t }: { t: T }) {
       <p className="text-sm text-fg-mute">{t.hero.eyebrow}</p>
 
       <h1 className="mt-10 text-5xl font-medium leading-[1.04] tracking-tighter3 text-fg sm:text-6xl md:text-[72px]">
-        {t.hero.titleLead} Biolink{t.hero.titleEnd}
+        {t.hero.title}
       </h1>
 
       <p className="mt-10 text-lg leading-relaxed text-fg-dim sm:text-xl">
@@ -224,61 +224,66 @@ function About({ t }: { t: T }) {
 }
 
 /* ---------------------------------------------------------------- */
-/* 3. Current focus — Biolink (no card, no italic, same material)    */
+/* 3. Current status — availability, read before the proof of work   */
 /* ---------------------------------------------------------------- */
 
-function CurrentFocus({ t }: { t: T }) {
+function Status({ t }: { t: T }) {
   return (
-    <section id="focus" className="py-16 sm:py-20">
-      <SectionHeading>{t.sections.focus}</SectionHeading>
-
-      <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-        <h3 className="text-4xl font-medium leading-none tracking-tighter2 text-fg sm:text-5xl">
-          <a
-            href={contact.biolink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-baseline gap-2"
-          >
-            <span>Biolink</span>
-            <span
-              aria-hidden
-              className="text-xl text-fg-sub transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-fg-mute sm:text-2xl"
-            >
-              ↗
-            </span>
-          </a>
-        </h3>
-        <span className="text-sm text-fg-mute">{t.focus.inProgress}</span>
-      </div>
-
-      <p className="mt-6 text-xl leading-snug text-fg sm:text-2xl">
-        {t.focus.tagline}
+    <section id="status" className="py-16 sm:py-20">
+      <SectionHeading>{t.sections.status}</SectionHeading>
+      <p className="text-2xl font-medium leading-snug tracking-tightish text-fg sm:text-3xl">
+        {t.status.lead}
       </p>
-
-      <div className="mt-8 space-y-5 text-lg leading-relaxed text-fg-dim">
-        {t.focus.paragraphs.map((p, i) => (
+      <div className="mt-6 space-y-6 text-lg leading-relaxed text-fg-dim sm:text-xl">
+        {t.status.paragraphs.map((p, i) => (
           <p key={i}>{p}</p>
         ))}
       </div>
-
-      <dl className="mt-12 space-y-2 text-sm">
-        {t.focus.meta.map((row) => (
-          <div
-            key={row.label}
-            className="grid grid-cols-[120px_1fr] gap-6"
-          >
-            <dt className="text-fg-mute">{row.label}</dt>
-            <dd className="text-fg">{row.value}</dd>
-          </div>
-        ))}
-      </dl>
     </section>
   );
 }
 
 /* ---------------------------------------------------------------- */
-/* 4. How I think                                                    */
+/* 4. Projects — same typographic material, no cards                 */
+/* ---------------------------------------------------------------- */
+
+function Projects({ t }: { t: T }) {
+  return (
+    <section id="projects" className="py-16 sm:py-20">
+      <SectionHeading>{t.sections.projects}</SectionHeading>
+
+      <div className="space-y-16">
+        {t.projects.map((project) => (
+          <article key={project.href}>
+            <h3 className="text-3xl font-medium leading-tight tracking-tighter2 text-fg sm:text-4xl">
+              <a
+                href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-baseline gap-2"
+              >
+                <span>{project.title}</span>
+                <span
+                  aria-hidden
+                  className="text-lg text-fg-sub transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-fg-mute sm:text-xl"
+                >
+                  ↗
+                </span>
+              </a>
+            </h3>
+            <p className="mt-3 text-sm text-fg-mute">{project.tag}</p>
+            <p className="mt-6 text-lg leading-relaxed text-fg-dim">
+              {project.body}
+            </p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ---------------------------------------------------------------- */
+/* 5. How I think                                                    */
 /* ---------------------------------------------------------------- */
 
 function HowIThink({ t }: { t: T }) {
@@ -296,27 +301,6 @@ function HowIThink({ t }: { t: T }) {
             </p>
           </div>
         ))}
-      </div>
-    </section>
-  );
-}
-
-/* ---------------------------------------------------------------- */
-/* 5. Other output — Tracevault mentioned inline                     */
-/* ---------------------------------------------------------------- */
-
-function OtherOutput({ t }: { t: T }) {
-  return (
-    <section id="other" className="py-16 sm:py-20">
-      <SectionHeading>{t.sections.other}</SectionHeading>
-      <div className="space-y-6 text-lg leading-relaxed text-fg-dim sm:text-xl">
-        {t.other.paragraphs.map((p, i) => (
-          <p key={i}>{p}</p>
-        ))}
-        <p>
-          <QuietLink href={contact.tracevault}>Tracevault</QuietLink>
-          <span className="text-fg-dim">{t.other.tracevaultAfter}</span>
-        </p>
       </div>
     </section>
   );

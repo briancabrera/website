@@ -1,7 +1,7 @@
 # brian-cabrera.com
 
 Personal presentation site for Brian Cabrera — a single-page, editorial piece
-centered on current focus (Biolink) rather than a traditional portfolio.
+built around two projects (BioLink case study, TraceVault) rather than a traditional portfolio.
 
 ## Stack
 
