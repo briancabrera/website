@@ -41,6 +41,7 @@ export default function Site() {
       <TopBar t={t} locale={locale} onChange={setLocale} />
       <Hero t={t} />
       <About t={t} />
+      <Status t={t} />
       <Projects t={t} />
       <HowIThink t={t} />
       <Footer t={t} />
@@ -223,7 +224,27 @@ function About({ t }: { t: T }) {
 }
 
 /* ---------------------------------------------------------------- */
-/* 3. Projects — same typographic material, no cards                 */
+/* 3. Current status — availability, read before the proof of work   */
+/* ---------------------------------------------------------------- */
+
+function Status({ t }: { t: T }) {
+  return (
+    <section id="status" className="py-16 sm:py-20">
+      <SectionHeading>{t.sections.status}</SectionHeading>
+      <p className="text-2xl font-medium leading-snug tracking-tightish text-fg sm:text-3xl">
+        {t.status.lead}
+      </p>
+      <div className="mt-6 space-y-6 text-lg leading-relaxed text-fg-dim sm:text-xl">
+        {t.status.paragraphs.map((p, i) => (
+          <p key={i}>{p}</p>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ---------------------------------------------------------------- */
+/* 4. Projects — same typographic material, no cards                 */
 /* ---------------------------------------------------------------- */
 
 function Projects({ t }: { t: T }) {
@@ -262,7 +283,7 @@ function Projects({ t }: { t: T }) {
 }
 
 /* ---------------------------------------------------------------- */
-/* 4. How I think                                                    */
+/* 5. How I think                                                    */
 /* ---------------------------------------------------------------- */
 
 function HowIThink({ t }: { t: T }) {
@@ -286,7 +307,7 @@ function HowIThink({ t }: { t: T }) {
 }
 
 /* ---------------------------------------------------------------- */
-/* 5. Footer                                                         */
+/* 6. Footer                                                         */
 /* ---------------------------------------------------------------- */
 
 function Footer({ t }: { t: T }) {

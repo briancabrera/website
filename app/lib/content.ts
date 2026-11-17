@@ -19,10 +19,12 @@ export type Content = {
   };
   sections: {
     about: string;
+    status: string;
     projects: string;
     how: string;
   };
   about: { paragraphs: string[] };
+  status: { lead: string; paragraphs: string[] };
   projects: Project[];
   principles: Principle[];
   footer: {
@@ -46,6 +48,7 @@ export const content: Record<Locale, Content> = {
     },
     sections: {
       about: "About",
+      status: "Current status",
       projects: "Projects",
       how: "How I think",
     },
@@ -54,6 +57,14 @@ export const content: Record<Locale, Content> = {
         "I started in code. It was the first language I had to think problems in, and it still shapes how I start most days.",
         "Product and business weren't a pivot. They just kept pulling me in. The questions I found interesting were almost always sitting one level above the code.",
         "What I care about now is building things that actually work. Not in a demo. In everyday use, a few months in, when nobody is watching anymore.",
+      ],
+    },
+    status: {
+      lead: "Looking for a team.",
+      paragraphs: [
+        "I have no interest in bootstrapping another solo startup right now. I built heavy infrastructure with BioLink and B2B tools with TraceVault, but trying to disrupt regulated markets without capital is a runway trap.",
+        "Today, I'm looking to join an early-stage team (pre-seed/seed) already in the trenches. If you are a technical founder who needs someone who masters the backend (Node/TS/Postgres) but understands sales, or a business founder who needs a technical engine to build the product, let's talk.",
+        "I'm not looking for a corporate seat. I'm looking for a hard problem to sink my teeth into.",
       ],
     },
     projects: [
@@ -108,6 +119,7 @@ export const content: Record<Locale, Content> = {
     },
     sections: {
       about: "Sobre mí",
+      status: "Status actual",
       projects: "Proyectos",
       how: "Cómo pienso",
     },
@@ -116,6 +128,14 @@ export const content: Record<Locale, Content> = {
         "Empecé escribiendo código. Ese fue el primer idioma que tuve para pensar problemas, y sigue siendo por donde arranco casi todos los días.",
         "Producto y negocio no fueron un pivot. Simplemente me fueron atrayendo. Las preguntas que me importaban casi siempre estaban un nivel por encima del código.",
         "Lo que me importa hoy es construir cosas que funcionen de verdad. No en una demo. En el uso cotidiano, unos meses después, cuando ya nadie está mirando.",
+      ],
+    },
+    status: {
+      lead: "Buscando equipo.",
+      paragraphs: [
+        "No tengo interés en levantar otra startup solo en este momento. Construí infraestructura pesada con BioLink y herramientas B2B con TraceVault, pero intentar disrumpir mercados regulados sin capital es una trampa de runway.",
+        "Hoy quiero sumarme a un equipo early-stage (pre-seed/seed) que ya esté en el barro. Si sos un founder técnico que necesita alguien que domine el backend (Node/TS/Postgres) pero que entienda de ventas, o un founder de negocios que necesita un motor técnico para construir el producto, hablemos.",
+        "No busco calentar una silla corporativa. Busco un problema difícil al que hincarle el diente.",
       ],
     },
     projects: [
