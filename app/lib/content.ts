@@ -3,31 +3,28 @@ export type Locale = "en" | "es";
 export const LOCALES: Locale[] = ["en", "es"];
 
 export type Principle = { title: string; body: string };
-export type MetaRow = { label: string; value: string };
+export type Project = {
+  title: string;
+  tag: string;
+  body: string;
+  href: string;
+};
 
 export type Content = {
   hero: {
     eyebrow: string;
-    titleLead: string;
-    titleEnd: string;
+    title: string;
     subtitle: string;
     links: { linkedin: string; github: string; email: string };
   };
   sections: {
     about: string;
-    focus: string;
+    projects: string;
     how: string;
-    other: string;
   };
   about: { paragraphs: string[] };
-  focus: {
-    inProgress: string;
-    tagline: string;
-    paragraphs: string[];
-    meta: MetaRow[];
-  };
+  projects: Project[];
   principles: Principle[];
-  other: { paragraphs: string[]; tracevaultAfter: string };
   footer: {
     headline: string;
     sub: string;
@@ -41,18 +38,16 @@ export type Content = {
 export const content: Record<Locale, Content> = {
   en: {
     hero: {
-      eyebrow: "Brian Cabrera, founder & builder",
-      titleLead: "Founder building",
-      titleEnd: ".",
+      eyebrow: "Brian Cabrera.",
+      title: "Software Engineer & Product Builder.",
       subtitle:
-        "I sit somewhere between product, engineering and business. Most of what I build ends up living in the gaps between those three.",
+        "I move between engineering, product and business. I build infrastructure that scales, but the questions I care about most always sit one level above the code: in the business model and in the user's problem.",
       links: { linkedin: "LinkedIn", github: "GitHub", email: "Email" },
     },
     sections: {
       about: "About",
-      focus: "Current focus",
+      projects: "Projects",
       how: "How I think",
-      other: "Other output",
     },
     about: {
       paragraphs: [
@@ -61,20 +56,20 @@ export const content: Record<Locale, Content> = {
         "What I care about now is building things that actually work. Not in a demo. In everyday use, a few months in, when nobody is watching anymore.",
       ],
     },
-    focus: {
-      inProgress: "pre-launch · june 2026",
-      tagline: "A biometric identity layer for physical commerce.",
-      paragraphs: [
-        "Biolink takes most of my time right now. It didn't start from a deck. It came out of things I kept seeing go wrong in physical environments, where identity and payments are still held together with tape.",
-        "The idea is narrow. Make identity at the point of interaction simple and reliable, so that everything built on top of it (payments, access, continuity) can stop working around it.",
-      ],
-      meta: [
-        { label: "Category", value: "Biometric identity, physical commerce" },
-        { label: "Role", value: "Founder" },
-        { label: "Stage", value: "Pre-launch" },
-        { label: "Launch", value: "June 2026" },
-      ],
-    },
+    projects: [
+      {
+        title: "BioLink (Case Study)",
+        tag: "Paused · Biometric Infrastructure",
+        body: "I designed and built the backend architecture for a loyalty and payments network running on facial biometrics. Zero-trust, AWS Rekognition and ACID transactions. The project was paused with production code finished, because it ran out of financial runway. I documented the architecture and the business pivot here.",
+        href: "https://biolink.briancabrera.com",
+      },
+      {
+        title: "TraceVault",
+        tag: "Open Source · B2B Tool",
+        body: "Away from complex infrastructure, I build tools for real friction. TraceVault is an audit logging library for Node.js and PostgreSQL, built so B2B startups can pass compliance certifications (SOC2) without overloading their primary database.",
+        href: "https://tracevault.briancabrera.com",
+      },
+    ],
     principles: [
       {
         title: "Start from something real.",
@@ -93,13 +88,6 @@ export const content: Record<Locale, Content> = {
         body: "Ideas are the easy part. I care about what is still there a few weeks into real use.",
       },
     ],
-    other: {
-      paragraphs: [
-        "Outside of Biolink, I sometimes build small tools for problems I keep running into at work, or just around the house. Nothing ambitious. Usually a short, specific thing that fixes a friction I got tired of.",
-        "If it ends up being useful to someone else, I publish it.",
-      ],
-      tracevaultAfter: " is one of them.",
-    },
     footer: {
       headline: "Happy to talk, short and direct.",
       sub: "Skip the meeting theater. Tell me what you're actually working on.",
@@ -112,18 +100,16 @@ export const content: Record<Locale, Content> = {
 
   es: {
     hero: {
-      eyebrow: "Brian Cabrera, founder y builder",
-      titleLead: "Founder construyendo",
-      titleEnd: ".",
+      eyebrow: "Brian Cabrera.",
+      title: "Software Engineer & Product Builder.",
       subtitle:
-        "Me muevo entre producto, ingeniería y negocio. La mayoría de lo que hago termina viviendo justo en el medio de esos tres mundos.",
+        "Me muevo entre la ingeniería, el producto y el negocio. Construyo infraestructuras que escalan, pero las preguntas que más me importan siempre están un nivel por encima del código: en el modelo de negocio y en el problema del usuario.",
       links: { linkedin: "LinkedIn", github: "GitHub", email: "Email" },
     },
     sections: {
       about: "Sobre mí",
-      focus: "Foco actual",
+      projects: "Proyectos",
       how: "Cómo pienso",
-      other: "Otras cosas",
     },
     about: {
       paragraphs: [
@@ -132,20 +118,20 @@ export const content: Record<Locale, Content> = {
         "Lo que me importa hoy es construir cosas que funcionen de verdad. No en una demo. En el uso cotidiano, unos meses después, cuando ya nadie está mirando.",
       ],
     },
-    focus: {
-      inProgress: "pre-launch · junio 2026",
-      tagline: "Una capa de identidad biométrica para el comercio físico.",
-      paragraphs: [
-        "Biolink se lleva la mayor parte de mi tiempo hoy. No salió de un deck. Salió de cosas que fui viendo romperse en entornos físicos, donde identidad y pagos todavía se sostienen con cinta adhesiva.",
-        "La idea es simple. Que la identidad en el punto de interacción sea lo suficientemente simple y confiable como para que todo lo que viene arriba (pagos, accesos, continuidad) pueda dejar de esquivarla.",
-      ],
-      meta: [
-        { label: "Categoría", value: "Identidad biométrica, comercio físico" },
-        { label: "Rol", value: "Founder" },
-        { label: "Etapa", value: "Pre-launch" },
-        { label: "Lanzamiento", value: "June 2026" },
-      ],
-    },
+    projects: [
+      {
+        title: "BioLink (Caso de Estudio)",
+        tag: "Pausado · Infraestructura Biométrica",
+        body: "Diseñé y construí la arquitectura backend para una red de fidelización y pagos con biometría facial. Zero-trust, AWS Rekognition y transacciones ACID. El proyecto se pausó con el código de producción terminado por falta de runway financiero. Documenté la arquitectura y el pivoteo del negocio acá.",
+        href: "https://biolink.briancabrera.com",
+      },
+      {
+        title: "TraceVault",
+        tag: "Open Source · B2B Tool",
+        body: "Fuera de infraestructuras complejas, construyo herramientas para fricciones reales. TraceVault es una librería de auditoría para Node.js y PostgreSQL diseñada para que las startups B2B puedan pasar certificaciones de compliance (SOC2) sin sobrecargar su base de datos principal.",
+        href: "https://tracevault.briancabrera.com",
+      },
+    ],
     principles: [
       {
         title: "Empezar por algo real.",
@@ -164,13 +150,6 @@ export const content: Record<Locale, Content> = {
         body: "Las ideas son la parte fácil. Me importa lo que sigue ahí unas semanas después de estar en uso real.",
       },
     ],
-    other: {
-      paragraphs: [
-        "Fuera de Biolink, a veces construyo herramientas pequeñas para problemas con los que me cruzo seguido, en el trabajo o en el día a día. Nada ambicioso. Casi siempre algo corto y específico que resuelve una fricción que ya me cansó.",
-        "Si le sirve a alguien más, la publico.",
-      ],
-      tracevaultAfter: " es una de ellas.",
-    },
     footer: {
       headline: "Abierto a una conversación corta y directa.",
       sub: "Nada de teatro de reuniones. Contame en qué estás trabajando.",
@@ -185,7 +164,5 @@ export const content: Record<Locale, Content> = {
 export const contact = {
   linkedin: "https://www.linkedin.com/in/cabrerabrian/",
   github: "https://github.com/briancabrera",
-  email: "brian@biolink.uy",
-  biolink: "https://biolink.uy",
-  tracevault: "https://tracevault.briancabrera.com",
+  email: "contact@briancabrera.com",
 };

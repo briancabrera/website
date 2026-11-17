@@ -9,15 +9,15 @@ const sans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Brian Cabrera — Founder building Biolink",
+  title: "Brian Cabrera — Software Engineer & Product Builder",
   description:
-    "Brian Cabrera. Founder building Biolink, a biometric identity layer for physical commerce.",
+    "Brian Cabrera. Software Engineer & Product Builder. Engineering, product and business.",
   authors: [{ name: "Brian Cabrera" }],
   creator: "Brian Cabrera",
   openGraph: {
-    title: "Brian Cabrera — Founder building Biolink",
+    title: "Brian Cabrera — Software Engineer & Product Builder",
     description:
-      "A biometric identity layer for physical commerce.",
+      "Engineering, product and business. BioLink case study and TraceVault.",
     type: "website",
     locale: "en_US",
   },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Brian Cabrera",
     description:
-      "Founder building Biolink — a biometric identity layer for physical commerce.",
+      "Software Engineer & Product Builder.",
   },
   robots: { index: true, follow: true },
 };
