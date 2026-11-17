@@ -7,6 +7,7 @@ export type Project = {
   title: string;
   tag: string;
   body: string;
+  note?: string;
   href: string;
 };
 
@@ -72,6 +73,7 @@ export const content: Record<Locale, Content> = {
         title: "BioLink (Case Study)",
         tag: "Paused · Biometric Infrastructure",
         body: "I designed and built the backend architecture for a loyalty and payments network running on facial biometrics. Zero-trust, AWS Rekognition and ACID transactions. The project was paused with production code finished, because it ran out of financial runway. I documented the architecture and the business pivot here.",
+        note: "Note: The infrastructure repositories are kept private, but I grant read access for technical review upon request.",
         href: "https://biolink.briancabrera.com",
       },
       {
@@ -143,6 +145,7 @@ export const content: Record<Locale, Content> = {
         title: "BioLink (Caso de Estudio)",
         tag: "Pausado · Infraestructura Biométrica",
         body: "Diseñé y construí la arquitectura backend para una red de fidelización y pagos con biometría facial. Zero-trust, AWS Rekognition y transacciones ACID. El proyecto se pausó con el código de producción terminado por falta de runway financiero. Documenté la arquitectura y el pivoteo del negocio acá.",
+        note: "Nota: Los repositorios de la infraestructura se mantienen privados, pero otorgo acceso de lectura para revisión técnica previa conversación.",
         href: "https://biolink.briancabrera.com",
       },
       {
